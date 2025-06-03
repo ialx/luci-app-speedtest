@@ -3,7 +3,7 @@ name: Build IPK
 on:
   push:
     branches:
-      - master
+      - speedtestcpp
     paths:
       - 'Makefile'
   workflow_dispatch:
