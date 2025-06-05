@@ -76,7 +76,7 @@ return view.extend({
 									document.getElementById('img_result').textContent = share_url;
 									status.textContent = _('Finished');
 									running = false, open = false;
-									var resultString = '| ' + date + ' | ' + time + ' | LuCI | ' + type + ' | ' + ping + ' | ' + jitter + ' | ' + latency + ' | ' + download + ' | ' + upload + ' | ' + img + ' |\n';
+									var resultString = '| ' + date + ' | ' + time + ' | LuCI | ' + type + ' | ' + ping + ' | ' + jitter + ' | ' + latency + ' | ' + download + ' | ' + upload + ' | ' + share_url + ' |\n';
 									var files = '/etc/speedtest_result';
 									fs.read(files).then(function(data) {
 										var newData = data.trim() + '\n' + resultString;
