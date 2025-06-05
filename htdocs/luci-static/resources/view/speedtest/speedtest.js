@@ -73,7 +73,11 @@ return view.extend({
 									document.getElementById('latency').textContent = latency;
 									document.getElementById('download').textContent = download;
 									document.getElementById('upload').textContent = upload;
-									document.getElementById('img_result').textContent = share_url;
+									// Insert image with measurement results
+									let img = document.createElement('img');
+									img.src = share_url;
+									img.id = 'speedtest_results_img';
+									document.getElementById('img_result').appendChild(img);
 									status.textContent = _('Finished');
 									running = false, open = false;
 									var resultString = '| ' + date + ' | ' + time + ' | LuCI | ' + type + ' | ' + ping + ' | ' + jitter + ' | ' + latency + ' | ' + download + ' | ' + upload + ' | ' + share_url + ' |\n';
