@@ -38,7 +38,7 @@ return view.extend({
 							if (!running) {
 								running = true, open = true;
 								var value = this.getAttribute('data-value');
-								var command = ['--output', 'json'];
+								var command = ['--output', 'json', '--share'];
 								if (value !== 'all') {
 									command.push('--' + value);
 								};
@@ -61,6 +61,7 @@ return view.extend({
 									var download = result.download_mbit ? result.download_mbit + ' Mbit/s' : '-';
 									var upload = result.upload_mbit ? result.upload_mbit + ' Mbit/s' : '-';
 									var latency = result.server.latency ? result.server.latency + ' ms' : '-';
+									var share_url = result.share;
 									document.getElementById('client-ip').textContent = result.client.ip;
 									document.getElementById('client-isp').textContent = result.client.isp + ' [' + result.client.lat + ', ' + result.client.lon + ']';
 									document.getElementById('server-name').textContent = result.server.sponsor;
@@ -72,9 +73,10 @@ return view.extend({
 									document.getElementById('latency').textContent = latency;
 									document.getElementById('download').textContent = download;
 									document.getElementById('upload').textContent = upload;
+									document.getElementById('img_result').textContent = share_url;
 									status.textContent = _('Finished');
 									running = false, open = false;
-									var resultString = '| ' + date + ' | ' + time + ' | LuCI | ' + type + ' | ' + ping + ' | ' + jitter + ' | ' + latency + ' | ' + download + ' | ' + upload + ' |\n';
+									var resultString = '| ' + date + ' | ' + time + ' | LuCI | ' + type + ' | ' + ping + ' | ' + jitter + ' | ' + latency + ' | ' + download + ' | ' + upload + ' | ' + img + ' |\n';
 									var files = '/etc/speedtest_result';
 									fs.read(files).then(function(data) {
 										var newData = data.trim() + '\n' + resultString;
@@ -185,6 +187,10 @@ return view.extend({
 				E('tr', {'class': 'tr cbi-rowstyle-1'}, [
 					E('td', {'class': 'td left', 'width': '50%'}, _('Upload Speed')),
 					E('td', {'class': 'td', 'id': 'upload'}, '-')
+				]),
+				E('tr', {'class': 'tr cbi-rowstyle-1'}, [
+					E('td', {'class': 'td left', 'width': '50%'}, _('Result')),
+					E('td', {'class': 'td', 'id': 'img_result'}, '-')
 				])
 			])
 		];

@@ -108,6 +108,7 @@ function renderTable(data, display) {
 			E('td', {'class': 'td'}, data.latency),
 			E('td', {'class': 'td'}, data.download),
 			E('td', {'class': 'td'}, data.upload),
+			E('td', {'class': 'td'}, data.img),
 			E('td', {'class': 'td'}, rowButton)
 		]);
 	});
@@ -122,6 +123,7 @@ function renderTable(data, display) {
 			E('th', {'class': 'th'}, _('Latency')),
 			E('th', {'class': 'th'}, _('Download Speed')),
 			E('th', {'class': 'th'}, _('Upload Speed')),
+			E('th', {'class': 'th'}, _('Result')),
 			E('th', {'class': 'th'})
 		]),
 		E(dataRows)
