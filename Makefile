@@ -9,7 +9,7 @@ LUCI_DEPENDS:=+speedtestcpp_is74
 LUCI_DESCRIPTION:=LuCI support for speedtestcpp
 
 PKG_MAINTAINER:=Hilman Maulana <hilman0.0maulana@gmail.com>
-PKG_VERSION:=2.3-dev004
+PKG_VERSION:=2.3-dev006
 PKG_LICENSE:=Apache-2.0
 
 include $(TOPDIR)/feeds/luci/luci.mk
