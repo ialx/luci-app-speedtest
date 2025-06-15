@@ -192,12 +192,13 @@ return view.extend({
 				E('tr', {'class': 'tr cbi-rowstyle-1'}, [
 					E('td', {'class': 'td left', 'width': '50%'}, _('Upload Speed')),
 					E('td', {'class': 'td', 'id': 'upload'}, '-')
-				]),
-				E('tr', {'class': 'tr cbi-rowstyle-1'}, [
-					E('td', {'class': 'td left', 'width': '50%'}, _('Result')),
-					E('td', {'class': 'td', 'id': 'img_result'}, '-')
 				])
-			])
+				//E('tr', {'class': 'tr cbi-rowstyle-1'}, [
+				//	E('td', {'class': 'td left', 'width': '50%'}, _('Result')),
+				//	E('td', {'class': 'td', 'id': 'img_result'}, '-')
+				//])
+			]),
+			E('div', {'class': 'spdt-result', 'id': 'img_result', 'style': 'display: flex; justify-content: space-between; padding: 1em 0;'}, [])
 		];
 		return E('div', {'class': 'cbi-map'}, [
 			E(header),
