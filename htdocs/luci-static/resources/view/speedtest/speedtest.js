@@ -77,6 +77,7 @@ return view.extend({
 									let img = document.createElement('img');
 									img.src = share_url;
 									img.id = 'speedtest_results_img';
+									img.style.setProperty('width', '100%');
 									document.getElementById('img_result').appendChild(img);
 									status.textContent = _('Finished');
 									running = false, open = false;
